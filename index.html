@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokédex System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <div class="pokedex">
+
+            <!-- PARTE SUPERIOR -->
+            <div class="pokedex-top">
+
+                <div class="top-light"></div>
+
+                <div class="top-details">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- PANTALLA -->
+            <div class="screen-frame">
+
+                <div class="screen-inner">
+
+                    <!-- BOOT -->
+                    <section id="boot-screen" class="screen active">
+
+                        <div class="system-text">
+
+                            <p class="system-title">POKÉDEX SYSTEM</p>
+
+                            <p id="boot-message">INITIALIZING...</p>
+
+                            <div id="diagnostics" class="diagnostics">
+
+                                <p id="diag-memory">
+                                    MEMORY..............
+                                </p>
+
+                                <p id="diag-database">
+                                    DATABASE............
+                                </p>
+
+                                <p id="diag-region">
+                                    REGION DATA.........
+                                </p>
+
+                                <p id="diag-trainer">
+                                    TRAINER SYSTEM......
+                                </p>
+
+                            </div>
+
+                            <div class="loading-bar">
+
+                                <div id="loading-progress"></div>
+
+                            </div>
+
+                            <p id="loading-percent">0%</p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- CONEXIÓN -->
+                    <section id="connection-screen" class="screen">
+
+                        <div class="system-text">
+
+                            <p class="system-title">
+                                POKÉDEX SYSTEM
+                            </p>
+
+                            <p id="scan-message">
+                                SCANNING TRAINER...
+                            </p>
+
+                            <div class="scan-line"></div>
+
+                            <div id="trainer-data" class="trainer-data">
+
+                                <p>IDENTITY CONFIRMED</p>
+
+                                <div class="divider"></div>
+
+                                <p>TRAINER DETECTED</p>
+
+                                <p id="trainer-name">
+                                    GUILLEM
+                                </p>
+
+                                <p class="trainer-id">
+                                    TRAINER ID: 09112007
+                                </p>
+
+                                <button id="start-button">
+                                    INICIAR CONEXIÓN
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ALERTA -->
+                    <section id="alert-screen" class="screen">
+
+                        <div class="connection-loading">
+                            <p id="connection-message">ANOMALY DETECTED...</p>
+                            <div class="connection-line"></div>
+                            <p id="connection-status"></p>
+                        </div>
+                    
+                        <div id="trainer-mode" class="trainer-mode">
+                    
+                            <p class="mode-label">POKÉDEX SYSTEM</p>
+                    
+                            <div class="mode-divider"></div>
+                    
+                            <p class="mode-active">TRAINER MODE: ACTIVE</p>
+                    
+                            <p class="trainer-display">GUILLEM</p>
+                    
+                            <p class="trainer-display-id">ID: 09112007</p>
+                    
+                            <div class="mode-divider"></div>
+                    
+                            <p class="alert-title">⚠ ALERTA ⚠</p>
+                    
+                            <p>
+                                Se ha detectado una concentración
+                                inusual de actividad Pokémon.
+                            </p>
+                    
+                            <p>
+                                El número de Pokémon registradas
+                                supera los parámetros habituales.
+                            </p>
+                    
+                            <p>
+                                La procedencia de la concentración
+                                no ha podido determinarse.
+                            </p>
+                    
+                            <button id="mission-button">
+                                ANALIZAR ANOMALÍA
+                            </button>
+                    
+                        </div>
+                    
+                    </section>
+                    <section id="final-search-screen" class="screen">
+
+                        <div class="final-search-box">
+                    
+                            <p class="final-search-title">
+                                ANOMALY ANALYSIS
+                            </p>
+                    
+                            <div class="final-search-divider"></div>
+                    
+                            <p class="final-search-status">
+                                MULTIPLE POKÉMON SIGNATURES DETECTED
+                            </p>
+                    
+                            <p class="final-search-text">
+                                La concentración registrada supera los parámetros
+                                habituales de actividad Pokémon.
+                            </p>
+                    
+                            <p class="final-search-text">
+                                Las alertas parecen proceder de un mismo punto.
+                            </p>
+                    
+                            <div class="final-search-data">
+                    
+                                <p>SPECIES DETECTED: <strong>MULTIPLE</strong></p>
+                    
+                                <p>LOCATION: <strong>UNKNOWN</strong></p>
+                    
+                                <p>STATUS: <strong>UNRESOLVED</strong></p>
+                    
+                            </div>
+                    
+                            <p class="final-search-clue">
+                            
+                            </p>
+                    
+                            <button id="final-search-button">
+                                INICIAR RASTREO
+                            </button>
+                    
+                        </div>
+                    
+                    </section>
+                    <section id="final-location-screen" class="screen">
+
+                        <div class="final-search-box">
+                    
+                            <p class="final-search-title">
+                                POKÉMON CONCENTRATION LOCATION IN PROCESS
+                            </p>
+                    
+                            <div class="final-search-divider"></div>
+                    
+                            <p class="final-search-status">
+                                MULTIPLE SIGNATURES CONFIRMED
+                            </p>
+                    
+                            <p class="final-search-text">
+                                La concentración de actividad Pokémon va a ser localizada.
+                            </p>
+                    
+                            <p class="final-search-text">
+                                La Pokédex recomienda comprobar inmediatamente el punto indicado.
+                            </p>
+                    
+                            <div class="final-search-data">
+                    
+                                <p>Un territorio que ya visitaste antes de convertirte en entrenador, aunque probablemente no le prestaste demasiada atención. Allí comenzó esta aventura, pero no todo lo que merece ser encontrado aparece cuando llegas por primera vez. A veces, para descubrir lo que te has dejado atrás, hay que regresar al punto de partida. Vuelve al lugar donde comenzó todo y comprueba si esta vez eres capaz de ver lo que antes pasaste por alto.</p>
+                    
+                            </div>
+                    
+                            <p class="final-search-clue">
+                               
+                            </p>
+                    
+                            <button id="final-found-button">
+                                CONFIRMAR HALLAZGO
+                            </button>
+                    
+                        </div>
+                    
+                    </section>
+                    <section id="birthday-screen" class="screen">
+
+                        <div class="birthday-box">
+                    
+                            <p class="birthday-system">
+                                POKÉDEX SYSTEM
+                            </p>
+                    
+                            <div class="birthday-divider"></div>
+                    
+                            <p class="birthday-status">
+                                ALL DATA RECOVERED
+                            </p>
+                    
+                            <div class="birthday-message">
+                    
+                                <p class="birthday-main">
+                                    FELIZ CUMPLEAÑOS, GUILLEM.
+                                </p>
+                    
+                                <p>
+                                    Si has llegado hasta aquí,
+                                    significa que has encontrado todos los Pokémon.
+                                </p>
+                    
+                                <p>
+                                    Pero había algo que la Pokédex
+                                    no podía registrar.
+                                </p>
+                    
+                                <p class="birthday-highlight">
+                                    TODO ESTO ERA PARA TI.
+                                </p>
+                    
+                                <p>
+                                    Espero que hayas disfrutado de la aventura
+                                    tanto como yo disfruté preparándola.
+                                </p>
+                    
+                            </div>
+                    
+                            <div class="birthday-final-line">
+                                <p>ADVENTURE COMPLETE</p>
+                                <strong>❤️</strong>
+                            </div>
+                    
+                            <button id="birthday-home-button">
+                                CONTINUAR
+                            </button>
+                    
+                        </div>
+                    
+                    </section>
+
+                    <!-- MISIÓN -->
+                    <section id="mission-screen" class="screen">
+
+                        <div class="mission-box">
+
+                            <p id="mission-number" class="mission-number">MISSION 001</p>
+
+                            <p id="mission-title" class="mission-title">
+                                THE UNKNOWN POKÉMON
+                            </p>
+                            
+                            <p id="mission-description" class="mission-description">
+                                El Profesor ha detectado una especie que no figura en los
+                                registros de la Pokédex. La criatura ha desaparecido antes
+                                de poder ser identificada.
+                            </p>
+                            
+                            <p id="mission-location" class="mission-location">
+                                OBJETIVO: ENCUENTRA LA ZONA Y LOCALIZA AL POKÉMON.
+                            </p>
+                            
+                        
+                            <button id="signal-button">
+                                HE RECIBIDO LA SEÑAL
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- POKÉMON -->
+                    <section id="pokemon-screen" class="screen">
+                        <div class="pokemon-box">
+                    
+                            <p class="pokemon-signal">⚡ SIGNAL DETECTED ⚡</p>
+                    
+                            <div class="pokemon-scan">
+                                <div class="scan-square">
+                                    <span class="scan-corner top-left"></span>
+                                    <span class="scan-corner top-right"></span>
+                                    <span class="scan-corner bottom-left"></span>
+                                    <span class="scan-corner bottom-right"></span>
+                    
+                                    <div class="scan-crosshair">+</div>
+                                    <div class="scan-line-moving"></div>
+                                </div>
+                            </div>
+                    
+                            <p class="pokemon-status">ANALYZING SPECIES...</p>
+                    
+                            <div class="pokemon-data">
+                                <p>SPECIES: <strong>UNKNOWN</strong></p>
+                                <p>TYPE: <strong>UNKNOWN</strong></p>
+                                <p>STATUS: <strong>UNREGISTERED</strong></p>
+                                <p>DATA: <strong id="pokemon-data-progress">░░░░░░░░░░</strong></p>
+                            </div>
+                    
+                            <button id="analyze-button">ANALIZAR SEÑAL</button>
+                    
+                        </div>
+                    </section>
+
+                    </section>
+
+           
+                    <section id="data-screen" class="screen">
+                <div class="data-box">
+            
+                    <p class="data-title">DATA RECOVERED</p>
+            
+                    <div class="data-divider"></div>
+            
+                    <p class="data-status">ANALYSIS COMPLETE</p>
+            
+                    <div class="recovered-data">
+                        <p>SPECIES: <strong>UNKNOWN</strong></p>
+                        <p>TYPE: <strong>UNKNOWN</strong></p>
+                        <p>STATUS: <strong>UNREGISTERED</strong></p>
+                    </div>
+            
+                    <div class="trace-box">
+                        <p>TRACE DETECTED</p>
+                        <p class="trace-value">SIGNAL RESIDUE: ████████░░</p>
+                    </div>
+            
+                    <p class="location-label">NEW LOCATION IDENTIFIED</p>
+            
+                    <div class="location-clue">
+                        <p id="location-clue-label">LOCATION DATA:</p>
+                        <strong id="location-clue-text">[PISTA DEL REGALO]</strong>
+                    </div>
+                    
+                    <button id="location-button">ACEPTAR PISTA</button>
+            
+                </div>
+            </section>
+            <section id="active-mission-screen" class="screen">
+                <div class="active-mission-box">
+            
+                    <p class="active-label">MISSION ACTIVE</p>
+            
+                    <div class="active-divider"></div>
+            
+                    <p class="active-status">SEARCH PROTOCOL ENGAGED</p>
+            
+                    <div class="objective-box">
+                        <p>OBJECTIVE:</p>
+                        <strong>LOCATE THE SIGNAL RESIDUE</strong>
+                    </div>
+            
+                    <div class="active-location">
+                        <p>LOCATION:</p>
+                        <strong id="active-location-text">
+                            DONDE EL ENTRENADOR GUARDA SUS AVENTURAS
+                        </strong>
+                    </div>
+            
+                    <div class="search-status">
+                        <span class="status-dot"></span>
+                        <span>SEARCHING...</span>
+                    </div>
+            
+                    <button id="found-item-button">
+                        POKÉMON ENCONTRADO
+                    </button>
+            
+                </div>
+            </section>
+            <!-- POKÉMON DETECTED -->
+<section id="item-screen" class="screen">
+
+    <div class="item-box">
+
+        <p class="item-title">POKÉMON DETECTED</p>
+
+        <div class="item-divider"></div>
+
+        <div class="pokemon-discovery">
+
+            <p id="pokemon-number" class="pokemon-number">NO. 001</p>
+
+            <h2 id="pokemon-name">ABACOON</h2>
+
+            <p id="pokemon-category" class="pokemon-category">
+                POKÉMON CUENTAALADO
+            </p>
+
+            <div class="pokemon-type" id="pokemon-type">
+                <span>VOLADOR</span>
+                <span>ACERO</span>
+            </div>
+
+            <div class="pokemon-stats">
+
+                <p>
+                    <span>ALTURA</span>
+                    <strong id="pokemon-height">0.4 m</strong>
+                </p>
+
+                <p>
+                    <span>PESO</span>
+                    <strong id="pokemon-weight">5.8 kg</strong>
+                </p>
+
+                <p>
+                    <span>HABILIDAD</span>
+                    <strong id="pokemon-ability">CUENTA PRECISA</strong>
+                </p>
+
+            </div>
+
+            <p id="pokemon-description" class="pokemon-description">
+                Sus cuentas recorren los hilos que unen sus extremidades
+                mientras planea. Puede liberar uno de los extremos y
+                lanzar las cuentas a gran velocidad.
+            </p>
+
+            <p id="pokemon-attack" class="pokemon-attack">
+                ATAQUE CARACTERÍSTICO: CUENTA BALA
+            </p>
+
+        </div>
+
+        <button id="register-item-button">
+            REGISTRAR POKÉMON
+        </button>
+
+    </div>
+
+</section>
+
+<section id="registered-screen" class="screen">
+    <div class="registered-box">
+
+        <p class="registered-title">POKÉDEX UPDATED</p>
+
+        <div class="registered-divider"></div>
+
+        <p class="registered-status">NEW DATA REGISTERED</p>
+
+        <div class="entry-number">
+            <span>ENTRY</span>
+            <strong id="registered-number">#001</strong>
+        </div>
+
+        <div class="entry-data">
+
+            <p>SPECIES:</p>
+            <strong id="registered-species">ABACOON</strong>
+
+            <p>STATUS:</p>
+            <strong>REGISTERED</strong>
+
+            <p>DATA COMPLETION:</p>
+            <strong id="registered-completion">████░░░░░░ 40%</strong>
+
+        </div>
+
+        <p class="registered-message">
+            New information has been added to the Pokédex.
+        </p>
+
+        <button id="next-mission-button">
+            CONTINUAR
+        </button>
+
+    </div>
+</section>
+            <section id="complete-screen" class="screen">
+                <div class="complete-box">
+            
+                    <p class="complete-title">MISSION COMPLETE</p>
+            
+                    <div class="complete-divider"></div>
+            
+                    <p id="complete-mission-number" class="complete-mission">MISSION 001</p>
+            
+                    <div class="completion-list">
+                        <p>SIGNAL RECOVERED <strong>✓</strong></p>
+                        <p>SPECIES ANALYZED <strong>✓</strong></p>
+                        <p>POKÉMON RECOVERED <strong>✓</strong></p>
+                        <p>DATA REGISTERED <strong>✓</strong></p>
+                    </div>
+                    <button id="complete-mission-button">
+                        CONTINUAR
+                    </button>
+            
+                </div>
+            </section>
+            <section id="home-screen" class="screen">
+
+                <div class="home-box">
+            
+                    <p class="home-title">POKÉDEX SYSTEM</p>
+            
+                    <div class="home-divider"></div>
+            
+                    <div class="trainer-summary">
+                        <p>TRAINER</p>
+                        <strong>GUILLEM</strong>
+            
+                        <p>TRAINER ID</p>
+                        <strong>09112007</strong>
+                    </div>
+            
+                    <div class="home-menu">
+            
+                        <button id="missions-button" class="home-menu-button">
+                            <span>MISSIONS</span>
+                            <span id="mission-count">0</span>
+                        </button>
+            
+                        <button id="pokedex-button" class="home-menu-button">
+                            <span>POKÉDEX</span>
+                        </button>
+            
+                        <button id="trainer-button" class="home-menu-button">
+                            <span>TRAINER DATA</span>
+                        </button>
+            
+                    </div>
+            
+                    <div class="home-progress">
+                        <p>DATA COMPLETION</p>
+            
+                        <div class="progress-bar">
+                            <div id="data-progress"></div>
+                        </div>
+            
+                        <strong id="progress-text">0%</strong>
+                    </div>
+            
+                </div>
+            
+            </section>
+            <section id="mission-list-screen" class="screen">
+
+                <div class="mission-list-box">
+            
+                    <p class="mission-list-title">
+                        MISSION DATABASE
+                    </p>
+            
+                    <div class="mission-list-divider"></div>
+            
+                    <p class="mission-list-status">
+                        AVAILABLE MISSIONS
+                    </p>
+            
+                    <button id="mission-001-button" class="mission-entry">
+                        <span>
+                            <strong id="mission-entry-number">MISSION 001</strong>
+                            <small id="mission-entry-name">UNKNOWN SIGNAL</small>
+                        </span>
+                        <span id="mission-entry-status" class="mission-entry-status">NEW</span>
+                    </button>
+            
+                    <button id="mission-back-button">
+                        VOLVER
+                    </button>
+            
+                </div>
+            
+            </section>
+            <!-- POKÉDEX -->
+<section id="pokedex-menu-screen" class="screen">
+
+    <div class="pokedex-menu-box">
+
+        <p class="pokedex-menu-title">POKÉDEX</p>
+
+        <div class="pokedex-menu-divider"></div>
+
+        <p class="pokedex-menu-status">REGISTERED SPECIES</p>
+
+        <!-- SIN POKÉMON -->
+        <div id="pokedex-empty" class="pokedex-empty">
+            <p>NO SPECIES REGISTERED</p>
+            <strong>DATA: 0</strong>
+        </div>
+
+        <!-- POKÉDEX ACTIVA -->
+        <div id="pokedex-viewer" class="pokedex-viewer">
+
+            <button id="pokedex-prev" class="pokedex-arrow">
+                ◀
+            </button>
+
+            <div id="pokedex-entry-view" class="pokedex-entry-view">
+
+                <div class="pokedex-entry-header">
+                    <span id="pokedex-number">#001</span>
+                    <strong id="pokedex-name">ABACOON</strong>
+                </div>
+
+                <p id="pokedex-category">POKÉMON CUENTAALADO</p>
+
+                <div id="pokedex-types" class="pokedex-entry-types">
+                    <span>VOLADOR</span>
+                    <span>ACERO</span>
+                </div>
+
+                <div class="pokedex-entry-data">
+
+                    <p>
+                        ALTURA
+                        <strong id="pokedex-height">0.4 m</strong>
+                    </p>
+
+                    <p>
+                        PESO
+                        <strong id="pokedex-weight">5.8 kg</strong>
+                    </p>
+
+                    <p>
+                        HABILIDAD
+                        <strong id="pokedex-ability">CUENTA PRECISA</strong>
+                    </p>
+
+                </div>
+
+                <p id="pokedex-description" class="pokedex-entry-description">
+                    Sus cuentas recorren los hilos de sus extremidades
+                    mientras planea. Puede liberar uno de los extremos
+                    y utilizarlos como proyectiles.
+                </p>
+
+                <p id="pokedex-attack" class="pokedex-entry-attack">
+                    ATAQUE: CUENTA BALA
+                </p>
+
+            </div>
+
+            <button id="pokedex-next" class="pokedex-arrow">
+                ▶
+            </button>
+
+        </div>
+
+        <div id="pokedex-position" class="pokedex-position">
+            <span id="pokedex-current">1</span>
+            <span>/</span>
+            <span id="pokedex-total">1</span>
+        </div>
+
+        <button id="pokedex-back-button">
+            VOLVER
+        </button>
+
+    </div>
+
+</section>
+            <section id="trainer-data-screen" class="screen">
+
+                <div class="trainer-data-menu-box">
+            
+                    <p class="trainer-data-menu-title">
+                        TRAINER DATA
+                    </p>
+            
+                    <div class="trainer-data-menu-divider"></div>
+            
+                    <div class="trainer-profile">
+            
+                        <p>TRAINER</p>
+                        <strong>GUILLEM</strong>
+            
+                        <p>TRAINER ID</p>
+                        <strong>09112007</strong>
+            
+                        <p>STATUS</p>
+                        <strong>ACTIVE</strong>
+            
+                    </div>
+            
+                    <button id="trainer-data-back-button">
+                        VOLVER
+                    </button>
+            
+                </div>
+            
+            </section>
+
+
+            <div id="mission-notification" class="mission-notification">
+                <span class="notification-icon">!</span>
+                <span>NUEVA MISIÓN DESBLOQUEADA</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+            <!-- CONTROLES -->
+            <div class="pokedex-controls">
+
+                <div class="control-left">
+
+                    <div class="speaker">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="small-button"></div>
+
+                </div>
+
+
+                <div class="control-center">
+
+                    <div class="dpad">
+
+                        <div class="dpad-up"></div>
+                        <div class="dpad-down"></div>
+                        <div class="dpad-left"></div>
+                        <div class="dpad-right"></div>
+                        <div class="dpad-center"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-right">
+
+                    <div class="action-button red-button"></div>
+                    <div class="action-button black-button"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PARTE INFERIOR -->
+            <div class="pokedex-bottom">
+
+                <div class="bottom-line"></div>
+
+                <div class="bottom-label">
+                    POKÉDEX
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
